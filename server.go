@@ -23,6 +23,11 @@ var (
 	StreamServerInterceptor = DefaultServerMetrics.StreamServerInterceptor()
 )
 
+// GRPCServer lets register any grpc server implementation, e.g. *grpc.Server and *xds.GRPCServer.
+type GRPCServer interface {
+	GetServiceInfo() map[string]grpc.ServiceInfo
+}
+
 func init() {
 	prom.MustRegister(DefaultServerMetrics.serverStartedCounter)
 	prom.MustRegister(DefaultServerMetrics.serverHandledCounter)
@@ -34,7 +39,7 @@ func init() {
 // allows for easier monitoring in Prometheus (no missing metrics), and should
 // be called *after* all services have been registered with the server. This
 // function acts on the DefaultServerMetrics variable.
-func Register(server *grpc.Server) {
+func Register(server GRPCServer) {
 	DefaultServerMetrics.InitializeMetrics(server)
 }
 

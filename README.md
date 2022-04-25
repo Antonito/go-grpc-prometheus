@@ -1,9 +1,9 @@
 # Go gRPC Interceptors for Prometheus monitoring 
 
 [![Travis Build](https://travis-ci.org/grpc-ecosystem/go-grpc-prometheus.svg)](https://travis-ci.org/grpc-ecosystem/go-grpc-prometheus)
-[![Go Report Card](https://goreportcard.com/badge/github.com/grpc-ecosystem/go-grpc-prometheus)](http://goreportcard.com/report/grpc-ecosystem/go-grpc-prometheus)
-[![GoDoc](http://img.shields.io/badge/GoDoc-Reference-blue.svg)](https://godoc.org/github.com/grpc-ecosystem/go-grpc-prometheus)
-[![SourceGraph](https://sourcegraph.com/github.com/grpc-ecosystem/go-grpc-prometheus/-/badge.svg)](https://sourcegraph.com/github.com/grpc-ecosystem/go-grpc-prometheus/?badge)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Antonito/go-grpc-prometheus)](http://goreportcard.com/report/grpc-ecosystem/go-grpc-prometheus)
+[![GoDoc](http://img.shields.io/badge/GoDoc-Reference-blue.svg)](https://godoc.org/github.com/Antonito/go-grpc-prometheus)
+[![SourceGraph](https://sourcegraph.com/github.com/Antonito/go-grpc-prometheus/-/badge.svg)](https://sourcegraph.com/github.com/Antonito/go-grpc-prometheus/?badge)
 [![codecov](https://codecov.io/gh/grpc-ecosystem/go-grpc-prometheus/branch/master/graph/badge.svg)](https://codecov.io/gh/grpc-ecosystem/go-grpc-prometheus)
 [![Slack](https://img.shields.io/badge/join%20slack-%23go--grpc--prometheus-brightgreen.svg)](https://join.slack.com/t/improbable-eng/shared_invite/enQtMzQ1ODcyMzQ5MjM4LWY5ZWZmNGM2ODc5MmViNmQ3ZTA3ZTY3NzQwOTBlMTkzZmIxZTIxODk0OWU3YjZhNWVlNDU3MDlkZGViZjhkMjc)
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
@@ -35,7 +35,7 @@ There are two types of interceptors: client-side and server-side. This package p
 ### Server-side
 
 ```go
-import "github.com/grpc-ecosystem/go-grpc-prometheus"
+import "github.com/Antonito/go-grpc-prometheus"
 ...
     // Initialize your gRPC server's interceptor.
     myServer := grpc.NewServer(
@@ -54,7 +54,7 @@ import "github.com/grpc-ecosystem/go-grpc-prometheus"
 ### Client-side
 
 ```go
-import "github.com/grpc-ecosystem/go-grpc-prometheus"
+import "github.com/Antonito/go-grpc-prometheus"
 ...
    clientConn, err = grpc.Dial(
        address,

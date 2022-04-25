@@ -2,7 +2,7 @@ package grpc_prometheus
 
 import (
 	"context"
-	"github.com/grpc-ecosystem/go-grpc-prometheus/packages/grpcstatus"
+	"github.com/Antonito/go-grpc-prometheus/packages/grpcstatus"
 	prom "github.com/prometheus/client_golang/prometheus"
 
 	"google.golang.org/grpc"
@@ -129,7 +129,7 @@ func (m *ServerMetrics) StreamServerInterceptor() func(srv interface{}, ss grpc.
 // InitializeMetrics initializes all metrics, with their appropriate null
 // value, for all gRPC methods registered on a gRPC server. This is useful, to
 // ensure that all metrics exist when collecting and querying.
-func (m *ServerMetrics) InitializeMetrics(server *grpc.Server) {
+func (m *ServerMetrics) InitializeMetrics(server GRPCServer) {
 	serviceInfo := server.GetServiceInfo()
 	for serviceName, info := range serviceInfo {
 		for _, mInfo := range info.Methods {
